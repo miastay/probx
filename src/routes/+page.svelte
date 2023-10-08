@@ -105,7 +105,7 @@
         switch(probabilisticModel) {
             case 'Normal':
             default: {
-                loglikelihood_value = normal_log_likelihood(X, muHat, varianceHat)  
+                loglikelihood_value = round(normal_log_likelihood(X, muHat, varianceHat))
                 graphLogLikelihood()
                 graphMLE()
             }

@@ -74,6 +74,7 @@ export function deriv_norm_log_likelihood_mu(data, mu_hat, variance_hat) {
             sum += (data[j] - i)
         }
         sum *= (1 / variance_hat)
+        //sum /= data.length
         graph.push(sum)
         series.push(i);
     }

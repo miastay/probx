@@ -1,9 +1,12 @@
 <script>
     import { onMount } from 'svelte';
     import Chart from 'chart.js/auto';
+    import annotationPlugin from 'chartjs-plugin-annotation';
+
+    Chart.register(annotationPlugin);
 
     export let ll_data = [[0,0]];
-    export let mle_data = [[0,0]]
+    export let mle_data = [[0,0], [0,0]]
 
     let chart;
 
@@ -36,17 +39,17 @@
                         {
                             label: 'Log-Likelihood',
                             data: ll_data[0],
-                            borderColor: '#ff0000',
-                            backgroundColor: '#ff0000',
+                            borderColor: '#ff6384',
+                            backgroundColor: '#ff6384',
                             borderWidth: 2,
                             pointRadius: 1,
-                            tension: 0.4
+                            tension: 0.4,
                         },
                         {
-                            label: 'd-mu',
+                            label: 'Maximum Likelihood Estimator',
                             data: mle_data[0],
-                            borderColor: '#0000ff',
-                            backgroundColor: '#0000ff',
+                            borderColor: '#36a2eb',
+                            backgroundColor: '#36a2eb',
                             borderWidth: 2,
                             pointRadius: 1,
                             tension: 0.4
@@ -62,6 +65,17 @@
                         title: {
                             display: true,
                             text: 'Estimators'
+                        },
+                        annotation: {
+                            annotations: {
+                                line1: {
+                                    type: 'line',
+                                    yMin: 0,
+                                    yMax: 0,
+                                    borderColor: '#444444',
+                                    borderWidth: 2,
+                                }
+                            }
                         }
                     },
                     scales: {
@@ -74,24 +88,8 @@
                             },
                             color: 'black',
                             }
-                        }
+                        },
                     },
-                    annotation: {
-                        annotations: [
-                            {
-                                type: "line",
-                                mode: "vertical",
-                                scaleID: "x-axis-0",
-                                value: "3",
-                                borderColor: "red",
-                                label: {
-                                    content: "TODAY",
-                                    enabled: true,
-                                    position: "top"
-                                }
-                            }
-                        ]
-                    }
                 },
             });
         }
