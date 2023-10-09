@@ -233,7 +233,7 @@
             </p>
         </div>
         <div class="row">
-            <p>{'$$\\mathcal{LL}(\\hat{\\mu}, \\hat{\\sigma^2})=$$'}</p>
+            <p>{'$$\\mathcal{LL}(\\hat{\\mu}, \\hat{\\sigma}^2)=$$'}</p>
             <p>{loglikelihood_value}</p>
         </div>
     </div>

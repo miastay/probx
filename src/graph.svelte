@@ -98,7 +98,7 @@
 
 </script>
 
-<div>
+<div class="fullrow">
     <canvas id="likelihoodGraph"></canvas>
     <span class="stats">
     </span>
@@ -114,5 +114,12 @@
         align-items: baseline;
         justify-content: center;
         gap: 0.5em;
+    }
+    .fullrow {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
     }
 </style>
